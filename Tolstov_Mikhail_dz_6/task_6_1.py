@@ -1,4 +1,4 @@
-#1. Не используя библиотеки для парсинга, распарсить (получить определённые данные)
+# 1. Не используя библиотеки для парсинга, распарсить (получить определённые данные)
 # файл логов web-сервера nginx_logs.txt
 # (https://github.com/elastic/examples/raw/master/Common%20Data%20Formats/nginx_logs/nginx_logs)
 # — получить список кортежей вида: (<remote_addr>, <request_type>, <requested_resource>). Например:
@@ -10,7 +10,7 @@
 #     ...
 # ]
 
-with open('log.txt', 'r', encoding='utf-8') as f:
+with open('nginx_logs.txt', 'r', encoding='utf-8') as f:
     log_list = []
     for line in f:
         line_clean = line.replace('"', '')
@@ -18,4 +18,3 @@ with open('log.txt', 'r', encoding='utf-8') as f:
         el_line_parts = (line_parts[0], line_parts[5], line_parts[6])
         log_list.append(el_line_parts)
     print(log_list)
-
