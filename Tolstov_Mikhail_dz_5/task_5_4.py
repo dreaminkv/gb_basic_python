@@ -15,11 +15,11 @@ max_src = [src[i] for i in range(1, len(src)) if src[i] > src[i-1]]
 print(max_src)
 
 
-def max_src(src):
+def max_src(list_num):
     result = []
-    for i in range(1, len(src)):
-        if src[i] > src[i - 1]:
-            result.append(src[i])
+    for i in range(1, len(list_num)):
+        if list_num[i] > list_num[i - 1]:
+            result.append(list_num[i])
     yield result
 
 
