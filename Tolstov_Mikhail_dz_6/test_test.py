@@ -1,6 +1,3 @@
-# -*- coding: utf-8 -*-
-aaa = 'Александров Иван Максимович Алексеев Максим Максимович Белов Марк Ярославович Богомолова Арина Александровна Большакова Мария Данииловна Бондарева Дарина Егоровна Бородина Полина Леоновна'
-
-line_parts = aaa.replace(' ', ',')
-
-print(line_parts)
+cities = ['Zhytomyr', 'Poltava', 'Chernihiv', 'Lviv', 'Vinnitsa', 'Kiev', 'Zhytomyr']
+dictkeys = {y:x for x,y in cities.items()}
+print(dictkeys)

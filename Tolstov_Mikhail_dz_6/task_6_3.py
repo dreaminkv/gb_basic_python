@@ -13,8 +13,14 @@
 # горные лыжи
 
 with open('users.csv', 'r', encoding='utf-8') as f:
-    user_data = [line for line in f]
-print(user_data)
+    users = [line.replace('\n', '') for line in f]
+
 with open('hobby.csv', 'r', encoding='utf-8') as f:
-    user_data1 = [line for line in f]
-print(user_data1)
+    users_hobby = [line.replace('\n', '')for line in f]
+users_hobby_dict = {}
+for _ in users_hobby:
+    users_hobby_dict = dict.fromkeys(users)
+
+for i in range(len(users_hobby)):
+    users_hobby_dict.update({users[i]: users_hobby[i]})
+print(users_hobby_dict)
