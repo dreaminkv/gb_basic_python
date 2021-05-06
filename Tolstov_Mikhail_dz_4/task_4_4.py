@@ -4,6 +4,6 @@
 # лишнего не происходит.
 import utils
 
-utils.currency_rates('AUD')
-utils.currency_rates('USD')
-utils.currency_rates('GBP')
+print(*utils.currency_rates('AUD'))
+print(*utils.currency_rates('USD'))
+print(*utils.currency_rates('GBP'))

@@ -20,9 +20,9 @@ def currency_rates(valute_name):
         year = int(date1[0:4])
         month = int(date1[5:7])
         day = int(date1[8:])
-        print(result_of_exchange, date(year, month, day))
+        return result_of_exchange, date(year, month, day)
 
 
 if __name__ == '__main__':
-    currency_rates('USD')
-    currency_rates('EUR')
+    print(*currency_rates('USD'))
+    print(*currency_rates('EUR'))
