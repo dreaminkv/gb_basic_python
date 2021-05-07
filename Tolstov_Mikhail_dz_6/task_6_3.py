@@ -13,14 +13,22 @@
 # горные лыжи
 
 with open('users.csv', 'r', encoding='utf-8') as f:
-    users = [line.replace('\n', '') for line in f]
+    users_list = [line.replace('\n', '') for line in f]
 
 with open('hobby.csv', 'r', encoding='utf-8') as f:
-    users_hobby = [line.replace('\n', '')for line in f]
-users_hobby_dict = {}
-for _ in users_hobby:
-    users_hobby_dict = dict.fromkeys(users)
+    users_hobby_list = [line.replace('\n', '')for line in f]
 
-for i in range(len(users_hobby)):
-    users_hobby_dict.update({users[i]: users_hobby[i]})
-print(users_hobby_dict)
+
+def show_users_hobbies(users, users_hobby):
+    """
+    :param users: users list
+    :param users_hobby: users hobby list
+    :return: users hobby dict
+    """
+    users_hobby_dict = dict.fromkeys(users)
+    for i in range(len(users_hobby)):
+        users_hobby_dict.update({users[i]: users_hobby[i]})
+    return users_hobby_dict
+
+
+print(show_users_hobbies(users_list, users_hobby_list))
