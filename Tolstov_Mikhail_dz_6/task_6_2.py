@@ -2,7 +2,7 @@
 # им запросов по данным файла логов из предыдущего задания.
 # Примечание: спамер — это клиент, отправивший больше всех запросов;
 # код должен работать даже с файлами, размер которых превышает объем ОЗУ компьютера.
-import time
+
 with open('nginx_logs.txt', 'r', encoding='utf-8') as f:
     log_list = []
     for line in f:
@@ -24,7 +24,5 @@ def who_spammer(log_ip):
     return spammer
 
 
-start = time.perf_counter()
 print(who_spammer(log_list))
-end = time.perf_counter()
-print(f'Write time: {end - start}')
+
