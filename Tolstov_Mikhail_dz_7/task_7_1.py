@@ -14,9 +14,15 @@ import os
 
 
 def star_my_project(project_name, *args):
+    """
+    :param add project_name:
+    :param args: add folder names inside the project
+    :return: adds project folders
+    """
     for folder in args:
         dir_path = os.path.join(project_name, folder)
-        os.makedirs(dir_path)
+        if not os.path.exists(dir_path):
+            os.makedirs(dir_path)
 
 
 star_my_project('my_project', 'settings', 'mainapp', 'adminapp', 'authapp')
