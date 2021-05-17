@@ -9,7 +9,7 @@ from shutil import copytree
 
 
 def copy_in_templates():
-    file_src_1  = 'my_project/authapp/templates'
+    file_src_1 = 'my_project/authapp/templates'
     file_src_2 = 'my_project/mainapp/templates'
     try:
         copytree(file_src_1, 'my_project/templates')
