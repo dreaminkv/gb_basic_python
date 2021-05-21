@@ -1,16 +1,20 @@
-# This is a sample Python script.
+def p_wrapper(func):
+    print(func)
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+    def tag_wrapper(*args, **kwargs):
+        print('args', args)
+        print('kwargs', kwargs)
+        markup = func(*args, **kwargs)
+        print(markup)
+        return markup
+
+    return tag_wrapper
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+@p_wrapper
+def render_input(field):
+    return f'<input id="id_{field}" type="text" name="{field}">'
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+username_f = render_input('username')
+print(render_input)
