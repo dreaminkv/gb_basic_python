@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 class Camera:
     counter = 0
 
@@ -39,3 +40,6 @@ camera_Tverskaya_street.turn(True)
 # # print(camera_Tverskaya_street._Camera__working_time)
 # camera_Pushk_street.sent_data()
 # camera_Pushk_street.get_people_in_frame()
+=======
+print('Test')
+>>>>>>> lesson_4
