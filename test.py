@@ -1,17 +1,41 @@
-import sys
+class Camera:
+    counter = 0
+
+    def __init__(self):
+        print('New cam add')
+        self._is_on = False
+        self.counter += 1
+        self.__working_time = 10
+
+    def turn(self, is_on: str):
+        self.is_on = is_on
+
+    def sent_data(self):
+        print('Data sent')
 
 
-list_odd_num = []
-for i in range(0, 50, 2):
-    list_odd_num.append(i)
+class Recognizer:
+    def __init__(self, path):
+        self.model = 'NN'
+        print('Recognizer!!')
 
-gen_odd_num = (num for num in range(0, 50, 2))
+    def get_people_in_frame(self, frame=None):
+        print('Someone detected!')
 
-print(gen_odd_num, type(gen_odd_num), sys.getsizeof(gen_odd_num))
-print(list_odd_num, type(list_odd_num), sys.getsizeof(list_odd_num))
 
-for el in gen_odd_num:
-    print(el**2)
+class HumanCamera(Camera, Recognizer):
+    def recognize_drinkers(self):
+        print('No one founded')
+    def sent_data(self):
+        print('Message: no one founded')
 
-for el in list_odd_num:
-    print(el**2)
+camera_Tverskaya_street = Camera()
+camera_Pushk_street = HumanCamera()
+camera_Lenina_street = HumanCamera()
+# # print(camera_Tverskaya_street._is_on)
+camera_Tverskaya_street.turn(True)
+# # print(camera_Tverskaya_street._is_on)
+# # print(Camera.counter)
+# # print(camera_Tverskaya_street._Camera__working_time)
+# camera_Pushk_street.sent_data()
+# camera_Pushk_street.get_people_in_frame()
